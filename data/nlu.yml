@@ -56,7 +56,10 @@ nlu:
     - [ti](respuesta)
     - [tiii](respuesta)
     - [mande](respuesta)
-    - [mandé](respuesta)
+    - [mandé](respuesta)   
+    - [digame](respuesta)
+    - [diga](respuesta)
+
 - intent: negación
   examples: |
     - [negativo](respuesta)
