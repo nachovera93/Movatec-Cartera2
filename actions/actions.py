@@ -10,22 +10,7 @@ from rasa_sdk.events import Restarted
 from rasa_sdk.events import AllSlotsReset
 import mysql.connector
 import pymysql
-global SiPaga
-global NoPaga
-global razon
-global tipo_contacto
-global compromiso_p
-global derivacion
-global fecha_com
-global entrega_info
-SiPaga=None
-NoPaga=None
-razon=None
-tipo_contacto=None
-compromiso_p=None
-derivacion=None
-fecha_com=None
-entrega_info=None
+
 class DataBase:
     def __init__(self):
         self.connection=pymysql.connect(host='45.225.92.195',
@@ -163,7 +148,7 @@ class ActionHello(Action):
       
         global uniqueid
         uniqueid = tracker.sender_id
-        llamarDB(uniqueid
+        llamarDB(uniqueid)
         t = datetime.datetime.now()
         if 23 >= int(t.hour) >= 12:
              dispatcher.utter_message(f'Buenas tardes, ¿Hablo con {nombre}?')
