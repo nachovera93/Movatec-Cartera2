@@ -43,6 +43,8 @@ actions:
 - action_ask_question
 - action_quien
 - action_ask_question2
+- action_donde
+- action_hello2
 
 forms:
   persona_form:

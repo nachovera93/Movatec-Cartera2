@@ -185,7 +185,6 @@ nlu:
 
 - intent: out_of_scope
   examples: |
-    - digame
     - cuenteme
     - yo creo
     - ah ya

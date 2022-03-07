@@ -65,45 +65,6 @@ rules:
       - action: action_donde
 
 
-  - rule: me repite 14
-    steps:
-      - action: action_donde2
-      - intent: me_repite
-      - action: action_donde2
-
-  - rule: me repite 14
-    steps:
-      - action: action_fecha
-      - intent: me_repite
-      - action: action_fecha
-
-
-
-  - rule: pregunta fecha
-    steps:
-      - intent: que_fecha
-      - action: action_fecha
-
-
-  - rule: pregunta monto
-    steps:
-      - intent: preguntar_monto
-      - action: action_monto
-
-
-
-  - rule: donde 1
-    steps:
-      - action: action_conoce
-      - intent: de_donde
-      - action: action_donde
-      - action: action_conoce
-
-  - rule: deonde 2
-    steps:
-      - action: action_ask_question
-      - intent: de_donde
-      - action: action_donde2
 
   - rule: donde 3
     steps:
@@ -112,13 +73,6 @@ rules:
       - action: action_donde
       - action: action_hello2
 
-  - rule: donde 4
-    steps:
-      - action: utter_negación_pago
-      - intent: de_donde
-      - action: action_donde
-      - action: utter_negación_pago
-      
 
   - rule: Confirm that the bot is not a human
     steps:
@@ -129,10 +83,6 @@ rules:
     steps:
       - intent: despedida
       - action: utter_despedida
-      - action: action_recibir_es_o_no
-      - action: action_guardar_conoce_o_no
-      - action: action_recibir_paga_o_no
-      - action: action_guardar_razón
       - action: action_restart2  
 
  
