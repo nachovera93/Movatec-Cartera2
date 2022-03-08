@@ -182,7 +182,10 @@ class ActionHello(Action):
         return "action_hello"
 
     def run(self, dispatcher, tracker, domain):
+        global database
+        global database2
         database = DataBase()
+        database2 = DataBase2()
         global uniqueid
         uniqueid = tracker.sender_id
         llamarDB(uniqueid)
