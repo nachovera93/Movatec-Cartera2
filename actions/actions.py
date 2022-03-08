@@ -160,16 +160,16 @@ class ActionHello(Action):
         return "action_hello"
 
     def run(self, dispatcher, tracker, domain):
-      
-        #global uniqueid
-        #uniqueid = tracker.sender_id
-        #llamarDB(uniqueid)
-        #progreso(7,razon,compromiso_p,derivacion,fecha_com,"No",uniqueid)
+        database = DataBase()
+        global uniqueid
+        uniqueid = tracker.sender_id
+        llamarDB(uniqueid)
+        progreso(7,razon,compromiso_p,derivacion,fecha_com,"No",uniqueid)
         t = datetime.datetime.now()
         if 23 >= int(t.hour) >= 12:
-             dispatcher.utter_message(f'Buenas tardes, ¿Hablo con nombre?')
+             dispatcher.utter_message(f'Buenas tardes, ¿Hablo con {nombre}?')
         else:
-             dispatcher.utter_message(f'Buenos días, ¿Hablo con nombre?')
+             dispatcher.utter_message(f'Buenos días, ¿Hablo con {nombre}?')
            
            
         return []
@@ -180,13 +180,13 @@ class ActionHello2(Action):
         return "action_hello2"
 
     def run(self, dispatcher, tracker, domain):
-        #database = DataBase()
-        #global uniqueid
-        #uniqueid = tracker.sender_id
+        
+        global uniqueid
+        uniqueid = tracker.sender_id
         #print("uniqueid: ", tracker.sender_id)
-        #llamarDB(uniqueid)
-        #progreso(7,razon,compromiso_p,derivacion,fecha_com,"No",uniqueid)
-        dispatcher.utter_message(f'Disculpe, Me comunico con primernombre?')
+        llamarDB(uniqueid)
+        progreso(7,razon,compromiso_p,derivacion,fecha_com,"No",uniqueid)
+        dispatcher.utter_message(f'Disculpe, Me comunico con {primernombre}?')
         return []
 
 
@@ -199,14 +199,14 @@ class ActionQuestion(Action):
         return "action_ask_question"
 
     def run(self, dispatcher, tracker, domain):
-        #database = DataBase()
-        #global uniqueid
-        #uniqueid = tracker.sender_id
-        #progreso(1,razon,compromiso_p,derivacion,fecha_com,"No",uniqueid)
-        #llamarDB(uniqueid)
-        #ConverterDate()
-        dispatcher.utter_message(f'primernombre, lo estamos llamando por encargo de tarjetas Cencosud Scotiabank para entregarle una Oferta por un Descuento especial que tenemos para Usted solo por esta semana. Le informamos que por su seguridad esta conversación está siendo grabada. ¿Desea más información para transferir con ejecutivo? Diga Si o no') 
-        #progreso(2,razon,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
+        database = DataBase()
+        global uniqueid
+        uniqueid = tracker.sender_id
+        progreso(1,razon,compromiso_p,derivacion,fecha_com,"No",uniqueid)
+        llamarDB(uniqueid)
+        ConverterDate()
+        dispatcher.utter_message(f'{primernombre}, lo estamos llamando por encargo de tarjetas Cencosud Scotiabank para entregarle una Oferta por un Descuento especial que tenemos para Usted solo por esta semana. Le informamos que por su seguridad esta conversación está siendo grabada. ¿Desea más información para transferir con ejecutivo? Diga Si o no') 
+        progreso(2,razon,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
            
         return []
 
@@ -215,9 +215,9 @@ class ActionQuestion2(Action):
         return "action_respuesta_positiva"
 
     def run(self, dispatcher, tracker, domain):
-        #global uniqueid
-        #uniqueid = tracker.sender_id
-        #progreso(2,razon,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
+        global uniqueid
+        uniqueid = tracker.sender_id
+        progreso(2,razon,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
         dispatcher.utter_message(f'Le comunico con agente. Por favor manténgase en línea. Un ejecutivo estará con Usted en breve | EXIT') 
         
            
@@ -232,10 +232,10 @@ class ActionSiPaga(Action):
         return "action_no_paga"
 
     def run(self, dispatcher, tracker, domain):
-        #global uniqueid
-        #uniqueid = tracker.sender_id
-        #llamarDB(uniqueid)
-        #progreso(4,razon,4,derivacion,fecha_com,"Si",uniqueid)
+        global uniqueid
+        uniqueid = tracker.sender_id
+        llamarDB(uniqueid)
+        progreso(4,razon,4,derivacion,fecha_com,"Si",uniqueid)
         dispatcher.utter_message(f"Disculpe las molestias. Muchas Gracias | EXIT")
         
         return []
@@ -286,7 +286,7 @@ class ActionEsoNo(Action):
         es_o_no = tracker.get_slot("es_o_no")
         if tracker.get_slot("es_o_no") is None:
             print("Es None ..")
-        print("es_o_no: ", conoce_o_no)
+        print("es_o_no: ", es_o_no)
             #dispatcher.utter_message(text=f"Razón: {Razón}")
         return []
 
@@ -312,11 +312,11 @@ class ActionConoce(Action):
         return "action_quien"
 
     def run(self, dispatcher, tracker, domain):
-        #database = DataBase()
-        #global uniqueid
-        #uniqueid = tracker.sender_id
-        #llamarDB(uniqueid)
-        dispatcher.utter_message(f'nombre?')
+        database = DataBase()
+        global uniqueid
+        uniqueid = tracker.sender_id
+        llamarDB(uniqueid)
+        dispatcher.utter_message(f'{nombre}?')
         return []
 
 class ActionDonde(Action):
