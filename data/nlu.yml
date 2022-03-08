@@ -1,6 +1,5 @@
 version: "2.0"
 nlu:
-
 - intent: afirmación
   examples: |
     - [el mismo](respuesta)
@@ -48,18 +47,24 @@ nlu:
     - [sí](respuesta)
     - [siiii](respuesta)
     - [siii](respuesta)
-    - [sii](respuesta)
     - la verdad es que [si](respuesta)
     - [con el](respuesta)
     - [con ella](respuesta)
     - [ok](respuesta)
     - [ti](respuesta)
     - [tiii](respuesta)
+    - [di](respuesta)
+    - [wi](respuesta)
     - [mande](respuesta)
-    - [mandé](respuesta)   
+    - [mandé](respuesta)
     - [digame](respuesta)
     - [diga](respuesta)
-
+    - [y](respuesta)
+    - [i](respuesta)
+    - [yy](respuesta)
+    - [soy yo](respuesta)
+    - si [soy yo](respuesta)
+    - [si](respuesta)
 - intent: negación
   examples: |
     - [negativo](respuesta)
@@ -182,14 +187,12 @@ nlu:
     - no entendi
     - como dijo?
     - que necesita?
-
 - intent: out_of_scope
   examples: |
     - cuenteme
     - yo creo
     - ah ya
     - ya
-
 - intent: eres_humano
   examples: |
     - eres un bot?
@@ -216,14 +219,8 @@ nlu:
     - quien eres?
     - quien me habla?
     - con quien estoy hablando?
-    - con quien hablo?
     - quien habla
     - con quien?
     - disculpa quien habla?
     - quien me dijo?
     - con quien
-
-    
-
-
-
