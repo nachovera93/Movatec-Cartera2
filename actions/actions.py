@@ -104,7 +104,7 @@ class DataBase:
         except Exception as e:
             raise
 
-#database = DataBase()
+database = DataBase()
 
 
 """
