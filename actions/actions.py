@@ -240,7 +240,7 @@ class ActionQuestion2(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         progreso(2,razon,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
-        dispatcher.utter_message(f'Le comunico con agente. Por favor manténgase en línea. Un ejecutivo estará con Usted en breve | EXIT') 
+        dispatcher.utter_message(f'Le comunico con agente. Por favor manténgase en línea. Un ejecutivo estará con Usted en breve | DER') 
         
            
         return []
