@@ -28,7 +28,7 @@ fecha_com=None
 entrega_info=None
 class DataBase:
     def __init__(self):
-        self.connection=pymysql.connect(host='45.228.211.131',
+        self.connection=pymysql.connect(host='10.3.0.5',
                              user='root',
                              password='T3c4dmin1234.',
                              database='asterisk',
@@ -37,7 +37,7 @@ class DataBase:
         print("Conexion exitosa!")
 
     def select_user(self, uniqueid):
-        sql = "select T0.vendor_lead_code, T0.first_name,T0.address1,T0.lead_id,T0.address2,T0.city,T0.owner,T1.list_name,T0.email,T2.campaign_name from vicidial_list_archive T0 inner join vicidial_lists T1 on T0.list_id=T1.list_id inner join vicidial_campaigns T2 on T1.campaign_id=T2.campaign_id where T0.lead_id ='{}' union ALL select T0.vendor_lead_code, T0.first_name,T0.address1,T0.lead_id,T0.address2,T0.city,T0.owner,T1.list_name,T0.email,T2.campaign_name  from vicidial_list T0 inner join vicidial_lists T1 on T0.list_id=T1.list_id inner join vicidial_campaigns T2 on T1.campaign_id=T2.campaign_id where T0.lead_id ='{}'".format(uniqueid,uniqueid)
+        sql = "select T0.vendor_lead_code, T0.first_name,T0.address1,T0.lead_id,T0.address2,T0.city,T0.owner,T1.list_name,T0.email,T2.campaign_name from vicidial_list T0 inner join vicidial_lists T1 on T0.list_id=T1.list_id inner join vicidial_campaigns T2 on T1.campaign_id=T2.campaign_id where T0.lead_id ='{}'".format(uniqueid,uniqueid)
         
         try:
             self.cursor.execute(sql)
@@ -76,9 +76,29 @@ class DataBase:
               
         except Exception as e:
             raise
+    def close(self):
+        try:
+            self.connection.close()
+            print("Sesion cerrada exitosamente!")
+            #agi.verbose("Database cerrada exitosamente!")
+        except Exception as e:
+            raise
+
+
+class DataBase2:
+    def __init__(self):
+        self.connection=pymysql.connect(host='45.228.211.131',
+                             user='root',
+                             password='T3c4dmin1234.',
+                             database='asterisk',
+                             )
+        self.cursor = self.connection.cursor()
+        print("Conexion exitosa database2!")
+
+
     def tipo_contacto(self,uniqueid):
         sql = "SELECT tipo_contacto, max(fecha_llamada) from bot_movatec where lead_id='{}'".format(uniqueid)
-       # sql = "UPDATE usuarios SET name='{}' WHERE id = {}".format(name,id)
+     
         try:
             self.cursor.execute(sql)
             user = self.cursor.fetchone()
@@ -89,7 +109,7 @@ class DataBase:
             raise 
     def update_user(self,tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid):
         sql = "UPDATE bot_movatec SET tipo_contacto='{}',motivo='{}',compromiso_p='{}',derivacion='{}',fecha_com='{}',entrega_info='{}' WHERE lead_id='{}'".format(tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid)
-       # sql = "UPDATE usuarios SET name='{}' WHERE id = {}".format(name,id)
+      
         
         try:
             self.cursor.execute(sql)
@@ -105,6 +125,8 @@ class DataBase:
             raise
 
 database = DataBase()
+database2 = DataBase2()
+
 
 
 """
@@ -149,11 +171,11 @@ def llamarDB(uniqueid):
 
 def progreso(tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid):
     #database = DataBase()
-    database.update_user(tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid)
+    database2.update_user(tipo_contacto,razon,compromiso_p,derivacion,fecha_com,entrega_info,uniqueid)
 
 def TipoContacto(uniqueid):
     #database = DataBase()
-    database.tipo_contacto(uniqueid)
+    database2.tipo_contacto(uniqueid)
 
 class ActionHello(Action):
     def name(self):
