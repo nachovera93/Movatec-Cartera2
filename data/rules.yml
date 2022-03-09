@@ -84,7 +84,11 @@ rules:
       - action: action_donde
 
   
-
+  - rule: despedida
+    steps:
+      - intent: despedida
+      - action: utter_despedida
+      - action: action_restart2  
 
  
   

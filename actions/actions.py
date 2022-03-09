@@ -26,6 +26,8 @@ compromiso_p=0
 derivacion=None
 fecha_com=None
 entrega_info=None
+
+"""
 class DataBase:
     def __init__(self):
         self.connection=pymysql.connect(host='10.3.0.5',
@@ -60,20 +62,7 @@ class DataBase:
             print("Deuda monto:" , monto)
             print("Campaña: " , Campania)
             print("oferta: " , oferta)
-            """
-            global mes
-            global dia
-            global anio
-            global nombreMes 
-            dia=int(fechaVencimiento[0:2])
-            mes=int(fechaVencimiento[3:5])
-            anio=int(fechaVencimiento[6:10])
-            nombreMes=month_converter(mes-1)
-            print("dia: ",dia)
-            print("mes: ",nombreMes)
-            print("año: ",anio)
-            """
-              
+          
         except Exception as e:
             raise
     def close(self):
@@ -127,7 +116,7 @@ class DataBase2:
 database = DataBase()
 database2 = DataBase2()
 
-
+"""
 
 """
 def variables():
