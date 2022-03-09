@@ -298,7 +298,7 @@ class ActionQuestion2(Action):
         uniqueid = tracker.sender_id
         #progreso(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
         Updates(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
-        dispatcher.utter_message(f'Le comunico con agente. Por favor manténgase en línea. Un ejecutivo estará con Usted en breve | DER') 
+        dispatcher.utter_message(f'Le comunico con un agente. Por favor manténgase en línea. Un ejecutivo estará con Usted en breve | DER') 
         
            
         return []
