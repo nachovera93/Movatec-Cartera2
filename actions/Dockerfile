@@ -3,5 +3,5 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 USER root
 RUN pip install -r requirements.txt
-EXPOSE 5052
+EXPOSE 5061
 USER 1001
