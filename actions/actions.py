@@ -204,7 +204,9 @@ class ActionQuestion(Action):
         progreso(1,razon,compromiso_p,derivacion,fecha_com,"No",uniqueid)
         llamarDB(uniqueid)
         ConverterDate()
-        dispatcher.utter_message(f'{primernombre}, lo estamos llamando por encargo de tarjetas Cencosud Scotiabank para entregarle una Oferta por un Descuento especial que tenemos para Usted solo por esta semana. Le informamos que por su seguridad esta conversación está siendo grabada. ¿Desea más información para transferir con ejecutivo? Diga Si o no') 
+        dispatcher.utter_message(f'{primernombre}, lo estamos llamando por encargo de tarjetas Cencosud Scotiabank para entregarle
+        una Oferta por un Descuento especial que tenemos para Usted solo por esta semana. Le informamos que por su seguridad esta conversación está siendo grabada.
+         ¿Desea más información para transferir con ejecutivo? Diga Si o no') 
         progreso(2,razon,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
            
         return []
