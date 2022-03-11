@@ -283,18 +283,10 @@ class ActionQuestion(Action):
         Updates(1,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid,rut)
         #llamarDB(uniqueid)
         Querys(uniqueid)
-        ConverterDate()
-<<<<<<< HEAD
-        dispatcher.utter_message(f'{primernombre}, lo estamos llamando por encargo de tarjetas Cencosud Scotiabank para entregarle
-        una Oferta por un Descuento especial que tenemos para Usted solo por esta semana. Le informamos que por su seguridad esta conversación está siendo grabada.
-         ¿Desea más información para transferir con ejecutivo? Diga Si o no') 
-        progreso(2,razon,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
-           
-=======
-        dispatcher.utter_message(f'{primernombre}, lo estamos llamando por encargo de tarjetas Cencosud Scotiabank para entregarle una oferta por un descuento especial que tenemos para usted solo por esta semana. También le informamos que por su seguridad esta conversación está siendo grabada. ¿Desea más información para transferir con ejecutivo?') 
+        #ConverterDate()
+        dispatcher.utter_message(f'{primernombre}, lo estamos llamando por encargo de tarjetas Cencosud Scotiabank para entregarle una oferta por un descuento especial que tenemos para usted solo por esta semana. También le informamos que por su seguridad esta conversación está siendo grabada. ¿Desea más información para transferirle con un ejecutivo?') 
         Updates(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
         #progreso(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid)   
->>>>>>> be8390e927fb8f6a5fbdb3c78302cac1ddc5efad
         return []
 
 class ActionQuestion2(Action):
@@ -306,7 +298,7 @@ class ActionQuestion2(Action):
         uniqueid = tracker.sender_id
         #progreso(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
         Updates(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
-        dispatcher.utter_message(f'Le comunico con un agente. Por favor manténgase en línea. Un ejecutivo estará con Usted en breve | DER') 
+        dispatcher.utter_message(f'Le comunico con un agente. | DER') 
         
            
         return []
