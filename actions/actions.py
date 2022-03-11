@@ -263,7 +263,7 @@ class ActionHello2(Action):
         Querys(uniqueid)
         #progreso(7,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid)
         Updates(7,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid,rut)
-        dispatcher.utter_message(f'Disculpe, Me comunico con {primernombre}?')
+        dispatcher.utter_message(f'Disculpe, Me comunico con {nombre}?')
         return []
 
 
@@ -284,7 +284,7 @@ class ActionQuestion(Action):
         #llamarDB(uniqueid)
         Querys(uniqueid)
         #ConverterDate()
-        dispatcher.utter_message(f'{primernombre}, lo estamos llamando por encargo de tarjetas Cencosud Scotiabank para entregarle una oferta por un descuento especial que tenemos para usted solo por esta semana. También le informamos que por su seguridad esta conversación está siendo grabada. ¿Desea más información para transferirle con un ejecutivo?') 
+        dispatcher.utter_message(f'{nombre}, lo estamos llamando por encargo de tarjetas Cencosud Scotiabank para entregarle una oferta por un descuento especial que tenemos para usted solo por esta semana. También le informamos que por su seguridad esta conversación está siendo grabada. ¿Desea más información para transferirle con un ejecutivo?') 
         Updates(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
         #progreso(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid)   
         return []
@@ -422,5 +422,5 @@ class ActionDonde2(Action):
         uniqueid = tracker.sender_id
         #llamarDB(uniqueid)
         Querys(uniqueid)
-        dispatcher.utter_message(f'Estamos llamando por encargo de Cencosud Scotiabank, {primernombre}, ¿Desea más información para transferir con ejecutivo?')
+        dispatcher.utter_message(f'Estamos llamando por encargo de Cencosud Scotiabank, ¿Desea más información para transferirle con ejecutivo?')
         return []
