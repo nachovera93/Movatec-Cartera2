@@ -284,7 +284,7 @@ class ActionQuestion(Action):
         #llamarDB(uniqueid)
         Querys(uniqueid)
         #ConverterDate()
-        dispatcher.utter_message(f'{nombre}, lo estamos llamando por encargo de tarjetas Cencosud Scotiabank para entregarle una oferta por un descuento especial que tenemos para usted solo por esta semana. También le informamos que por su seguridad esta conversación está siendo grabada. ¿Desea más información para transferirle con un ejecutivo?') 
+        dispatcher.utter_message(f'{nombre}, Estamos llamando por encargo de tarjetas Cencosud Scotiabank, para entregarle una oferta por un descuento especial que tenemos para usted solo por esta semana. También le informamos que por su seguridad esta conversación está siendo grabada. ¿Desea más información para transferirle con un ejecutivo?') 
         Updates(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
         #progreso(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid)   
         return []
