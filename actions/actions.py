@@ -410,7 +410,7 @@ class ActionDonde(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         #llamarDB(uniqueid)
-        dispatcher.utter_message(f'Nos estamos comunicando por encargo Cencosud Scotiabank')
+        dispatcher.utter_message(f'Estamos llamando por encargo de Cencosud Scotiabank.')
         return []
 
 class ActionDonde2(Action):
@@ -422,5 +422,5 @@ class ActionDonde2(Action):
         uniqueid = tracker.sender_id
         #llamarDB(uniqueid)
         Querys(uniqueid)
-        dispatcher.utter_message(f'Estamos llamando por encargo de Cencosud Scotiabank, ¿Desea más información para transferirle con ejecutivo?')
+        dispatcher.utter_message(f'Estamos llamando por encargo de Cencosud Scotiabank. ¿Desea más información para transferir con un ejecutivo?')
         return []
