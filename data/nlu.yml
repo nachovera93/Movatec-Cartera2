@@ -65,6 +65,8 @@ nlu:
     - [soy yo](respuesta)
     - si [soy yo](respuesta)
     - [si](respuesta)
+    - [te](respuesta)
+    - [t](respuesta)
 - intent: negación
   examples: |
     - [negativo](respuesta)
