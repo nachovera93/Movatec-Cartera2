@@ -10,6 +10,9 @@ nlu:
     - [yes](respuesta)
     - [si](respuesta) porfavor
     - [porsupuesto](respuesta)
+    - [por supuesto](respuesta)
+    - [claramente](respuesta)
+    - [obviamente](respuesta)
     - [yup](respuestasi)
     - [yeah](respuesta)
     - [yes](respuesta) please
@@ -191,10 +194,28 @@ nlu:
     - que necesita?
 - intent: out_of_scope
   examples: |
+    - tal vez
+    - quizás
     - cuenteme
     - yo creo
     - ah ya
     - ya
+    - jshaaujdjdjd
+    - yayay
+    - que es lo que pasa
+    - concha
+    - fhajjajaj
+    - que es lo que sucede
+    - real
+    - jaoepepep
+    - jajajaja
+    - y que tanto
+    - y que tanta wea
+    - zik
+    - kizz
+    - lame
+    - degame
+    
 - intent: eres_humano
   examples: |
     - eres un bot?
