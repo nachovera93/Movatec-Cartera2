@@ -10,6 +10,10 @@ nlu:
     - [yes](respuesta)
     - [si](respuesta) porfavor
     - [porsupuesto](respuesta)
+    - [por supuesto](respuesta)
+    - [obviamente](respuesta)
+    - [claro](respuesta) pues
+    - [claramente](respuesta)
     - [yup](respuestasi)
     - [yeah](respuesta)
     - [yes](respuesta) please
