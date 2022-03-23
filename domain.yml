@@ -41,6 +41,7 @@ actions:
 - action_hello2
 - action_no_paga
 - action_quien
+- action_no_es
 - action_respuesta_positiva
 - action_restart2
 - action_slot_reset

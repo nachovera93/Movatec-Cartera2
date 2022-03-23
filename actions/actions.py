@@ -297,14 +297,14 @@ class ActionQuestion2(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         #progreso(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
-        Updates(2,motivo,compromiso_p,"Si",fecha_com,"Si",uniqueid,rut)
+        Updates(8,motivo,compromiso_p,"Si",fecha_com,"Si",uniqueid,rut)
         dispatcher.utter_message(f'Le comunico con un agente, por favor manténgase en línea. | DER') 
         
            
         return []
        
 ################################################
-################### Si paga ####################
+################### No paga / No es ####################
 ################################################
 
 class ActionSiPaga(Action):
@@ -317,7 +317,23 @@ class ActionSiPaga(Action):
         #Querys(uniqueid)
         #llamarDB(uniqueid)
         #progreso(4,motivo,4,derivacion,fecha_com,"Si",uniqueid)
-        Updates(4,motivo,4,derivacion,fecha_com,"Si",uniqueid,rut)
+        Updates(9,motivo,compromiso_p,"No",fecha_com,"Si",uniqueid,rut)
+        dispatcher.utter_message(f"Disculpe las molestias. Muchas Gracias | EXIT")
+        
+        return []
+
+
+class ActionSiPaga(Action):
+    def name(self):
+        return "action_no_es"
+
+    def run(self, dispatcher, tracker, domain):
+        global uniqueid
+        uniqueid = tracker.sender_id
+        #Querys(uniqueid)
+        #llamarDB(uniqueid)
+        #progreso(4,motivo,4,derivacion,fecha_com,"Si",uniqueid)
+        Updates(7,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid,rut)
         dispatcher.utter_message(f"Disculpe las molestias. Muchas Gracias | EXIT")
         
         return []
