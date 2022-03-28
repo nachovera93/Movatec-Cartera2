@@ -299,7 +299,7 @@ class ActionQuestion2(Action):
         #progreso(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
         Updates(8,motivo,compromiso_p,"Si",fecha_com,"Si",uniqueid,rut)
         dispatcher.utter_message(f'Le comunico con un agente, por favor manténgase en línea. | DER') 
-        
+        Updates(8,motivo,compromiso_p,"Si",fecha_com,"Si",uniqueid,rut)
            
         return []
        
