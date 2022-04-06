@@ -179,6 +179,7 @@ class ActionQuestion2(Action):
     def run(self, dispatcher, tracker, domain):
         global uniqueid
         uniqueid = tracker.sender_id
+        Querys(uniqueid)
         #progreso(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid)
         Updates(8,motivo,compromiso_p,"Si",fecha_com,"Si",uniqueid,rut)
         dispatcher.utter_message(f'Le comunico con un agente, por favor manténgase en línea. | DER') 
