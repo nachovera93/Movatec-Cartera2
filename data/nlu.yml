@@ -199,6 +199,14 @@ nlu:
     - yo creo
     - ah ya
     - ya
+
+- intent: para_que
+  examples: |
+    - y para que?
+    - para que?
+    - pues para que
+    
+
 - intent: eres_humano
   examples: |
     - eres un bot?
